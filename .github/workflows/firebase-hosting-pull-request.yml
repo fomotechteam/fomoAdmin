@@ -19,6 +19,7 @@ jobs:
         run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryPoint: '.github\firebase.json'
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FOMO_93C6D }}'
           projectId: fomo-93c6d
