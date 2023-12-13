@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site" : "fomo-outlet-admin",
     "public": ".github/public/web",
     "ignore": [
       "firebase.json",
