@@ -82,27 +82,30 @@ class _OutletTypePickerWidgetState extends State<OutletTypePickerWidget> {
                 ),
               ),
             ),
-            FlutterFlowCheckboxGroup(
-              options: const [
-                'Kitchen',
-                'Pub',
-                'Club',
-                'Discothèque',
-                'Lounge',
-                'Bar'
-              ],
-              onChanged: (val) =>
-                  setState(() => _model.checkboxGroupValues = val),
-              controller: _model.checkboxGroupValueController ??=
-                  FormFieldController<List<String>>(
-                FFAppState().tempOutlet.outletType,
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+              child: FlutterFlowCheckboxGroup(
+                options: const [
+                  'Kitchen',
+                  'Pub',
+                  'Club',
+                  'Discothèque',
+                  'Lounge',
+                  'Bar'
+                ],
+                onChanged: (val) =>
+                    setState(() => _model.checkboxGroupValues = val),
+                controller: _model.checkboxGroupValueController ??=
+                    FormFieldController<List<String>>(
+                  FFAppState().tempOutlet.outletType,
+                ),
+                activeColor: FlutterFlowTheme.of(context).primary,
+                checkColor: FlutterFlowTheme.of(context).info,
+                checkboxBorderColor: FlutterFlowTheme.of(context).secondaryText,
+                textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                checkboxBorderRadius: BorderRadius.circular(4.0),
+                initialized: _model.checkboxGroupValues != null,
               ),
-              activeColor: FlutterFlowTheme.of(context).primary,
-              checkColor: FlutterFlowTheme.of(context).info,
-              checkboxBorderColor: FlutterFlowTheme.of(context).secondaryText,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium,
-              checkboxBorderRadius: BorderRadius.circular(4.0),
-              initialized: _model.checkboxGroupValues != null,
             ),
             FFButtonWidget(
               onPressed: () async {
